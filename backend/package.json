@@ -1,0 +1,23 @@
+{
+  "name": "price-tracker-backend",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "discover": "node src/scripts/discover.js",
+    "scrape:dry": "node src/scripts/scrape-once.js",
+    "scrape:headed": "node src/scripts/scrape-once.js --headed --chaos",
+    "scrape:headed:no-chaos": "node src/scripts/scrape-once.js --headed",
+    "test": "node --test src/scraper/parse.test.js src/store/adapter.test.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "playwright": "^1.47.0"
+  }
+}
