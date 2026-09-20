@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y curl && \
 
 WORKDIR /app
 COPY package*.json ./
-RUN npm ci --omit=dev
+RUN npm ci --omit=dev && npx playwright install chromium
 COPY src ./src
 ENV NODE_ENV=production
 ENV NODE_OPTIONS="--experimental-websocket"
